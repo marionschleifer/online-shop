@@ -1,4 +1,4 @@
-%h1 Listing Products
+%h1 Programmer's Book Store
 %table
   %tr
     %th Title
@@ -7,5 +7,7 @@
     %tr
       %td= product.title
       %td= product.description
-      %td=link_to "Add Product", carts_add_product_path(product_id: product.id)
+      %td= product.price
+      %th= image_tag(product.image_url)
+      %td= link_to "Add Product", carts_add_product_path(product_id: product.id)
 =link_to "New Product", new_product_path
