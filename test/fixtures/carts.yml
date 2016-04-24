@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  delivery_address: MyString
+  email: MyString
+  session_id: MyString
+  paid: false
+
+two:
+  delivery_address: MyString
+  email: MyString
+  session_id: MyString
+  paid: false

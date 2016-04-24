@@ -1,0 +1,10 @@
+%h1 My Cart
+%table
+  %tr
+    %th Title
+    %th Text
+  - @cart.products.each do |product|
+    %tr
+      %td= product.title
+      %td= product.description
+      %td=link_to "Remove Product", carts_remove_product_path(product_id: product.id)
