@@ -2,7 +2,6 @@
 
 class ProductTest < ActiveSupport::TestCase
   setup do
-    @cart = Cart.new(delivery_address: "Ring Street", email: "secret.email@gmail.com", session_id: "123", paid: true)
     @product = Product.new(title: "Ruby Book", description: "My Ruby book", image_url: "book.jpg", price: 19.90)
   end
 
