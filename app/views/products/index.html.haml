@@ -1,13 +1,15 @@
-%h1 Programmer's Book Store
-%table
-  %tr
-    %th Title
-    %th Text
+%h1.title Programmer's Book Store
+%table.product-list
+  %th
+  %th Title
+  %th Description
+  %th Price
   - @products.each do |product|
-    %tr
+    %tr{:class => cycle('list_line_odd', 'list_line_even')}
+      %td= image_tag(product.image_url, class: 'list_image')
       %td= product.title
       %td= product.description
-      %td= product.price
-      %th= image_tag(product.image_url)
-      %td= link_to "Add Product", carts_add_product_path(product_id: product.id)
-=link_to "New Product", new_product_path
+      %td= number_to_currency(product.price)
+      %td= button_to "Add Product", carts_add_product_path(product_id: product.id)
+
+=button_to "New Product", new_product_path
