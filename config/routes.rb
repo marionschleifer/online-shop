@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   get 'carts/show'
 
-  get 'carts/add_product'
+  post 'carts/add_product'
 
   get 'carts/remove_product'
 

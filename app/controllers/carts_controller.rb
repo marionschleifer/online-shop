@@ -18,6 +18,7 @@ class CartsController < ApplicationController
   def checkout
   end
 
+  private
   def set_cart
     @cart = Cart.find_or_create_by(session_id: session.id)
   end

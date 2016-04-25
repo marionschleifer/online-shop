@@ -1,4 +1,5 @@
 class ProductsController < ApplicationController
+  before_action :set_cart
   http_basic_authenticate_with name: "Cinderella", password: "1234", only: [ :new, :create, :edit, :update ]
 
   def index
@@ -16,6 +17,13 @@ class ProductsController < ApplicationController
     else
       render :action => "new"
     end
+  end
+
+
+  private
+
+  def set_cart
+    @cart = Cart.find_or_create_by(session_id: session.id)
   end
 
   def product_params
